@@ -1,16 +1,15 @@
 def collatz(number)
   numbers = []
-  while number != 1 do
+  while number != 1
     numbers << number
-    if number % 2 == 0
+    if number.even?
       number /= 2
     else
       number = (number * 3) + 1
     end
   end
-  return numbers << 1
+  numbers << 1
 end
-
 
 begin
   puts collatz(Integer(gets))
